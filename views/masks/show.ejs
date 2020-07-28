@@ -1,0 +1,49 @@
+<%- include('../partials/header') %>
+
+<div class="container">
+	<div class="row">
+		  <div class="col">
+			  <div class="card mt-4">
+				  <img class="img-fluid" src="<%= mask.image %>" alt="">
+				  <div class="card-body">
+						<h3 class="card-title"><%= mask.name %></h3>
+					  	<h4 class='delete-form'>$3.99</h4>
+					  <span id="star" class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9733; <span id="star-word"> 5.0 stars</span></span>
+				  	  
+						<p class="card-text"><%= mask.description %></p>
+					  	<em id="submitted">Submitted by <%= mask.author.username %></em>
+					  <% if(currentUser && mask.author.id.equals(currentUser._id)){ %>
+					  	<p class='delete-form'>
+							<a class='btn btn-warning' href='/masks/<%= mask._id %>/edit'>Edit</a>
+						</p>
+						<form class='delete-form' action="/masks/<%=mask._id %>?_method=DELETE" method='POST'>
+							<button class='btn btn-danger'>delete</button>
+					  	</form>
+					  <%}%>
+				  </div>
+			  </div>
+		  </div>
+			<div class="col">
+				<div class="card card-outline-secondary my-4">
+					<div class="card-header">
+						Product Reviews
+					</div>
+					<div class="card-body">
+						<% mask.comments.forEach(function(comment){ %>
+						<p><%= comment.text %></p>
+						<small class="text-muted">Posted by <strong><%= comment.author.username %> - </strong> on 3/1/17</small>
+						<% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+						<form style="display: inline" class="pull-right" action="/masks/<%=mask._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+							<a href="/masks/<%=mask._id%>/comments/<%=comment._id%>/edit" class="btn btn-xs btn-info">EDIT</a>
+							<button class="btn btn-xs btn-danger">DELETE</button>
+                        </form>
+						<%}%>
+						<hr>
+						<%})%>            
+						<a href="/masks/<%= mask._id %>/comments/new" class="btn btn-success">Leave a Review</a>
+					</div>
+				</div>
+			</div>
+</div>
+
+<%- include ('../partials/footer') %>

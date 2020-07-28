@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+	<div class='container'>
+		<header class='jumbotron'>
+			<h1>Welcome to Mask Museum</h1>
+			<p>View some of the best virus-protected masks in the world</p>
+			<p>
+				<a class="btn btn-primary btn-lg" href="/masks/new">Add a new mask</a>
+			</p>
+		</header>
+		<div class="row">
+			<% masks.forEach(function(mask){ %>
+			<div class='col-md-3 col-sm-6'>
+				<figure class="figure">
+					<img src = "<%= mask.image %>" class="img-fluid img-thumbnail rounded">
+					<figcaption class="figure-caption text-center"><%= mask.name %></figcaption>
+				</figure>
+				<div class='justify-content-center row'>
+					<a href="/masks/<%= mask._id %>" class="btn btn-primary">More info</a>
+				</div>
+			</div>
+			<%})%>
+		</div>
+	</div>
+<%- include ('../partials/footer') %>

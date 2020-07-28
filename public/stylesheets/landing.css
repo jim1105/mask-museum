@@ -1,0 +1,87 @@
+body {
+  background-color: #000;
+}
+
+h1 {
+  font-size: 4em;
+  text-shadow: 2px 2px 10px black;
+}
+
+#landing-header {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  padding-top: 40vh;
+}
+
+#landing-header h1 {
+  color: #fff;
+}
+
+.slideshow { 
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow li { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 50s linear infinite; 
+}
+
+.slideshow li:nth-child(1) { 
+	 background-image: url(https://media3.s-nbcnews.com/j/newscms/2020_23/1575506/face-masks-give-back-kr-2x1-tease-200602_0deabbe43e91f6d2c539f0ceb52caee9.social_share_1200x630_center.jpg);
+}
+.slideshow li:nth-child(2) { 
+  background-image: url(https://cbsnews2.cbsistatic.com/hub/i/r/2020/07/08/aa884fc8-7752-4c86-bff8-55da2d93a713/thumbnail/1200x630/cd1a877728044d4b0c45e07859dee16c/gettyimages-1225396097.jpg);
+  animation-delay: 10s; 
+}
+.slideshow li:nth-child(3) { 
+    background-image: url(https://newscdn2.weigelbroadcasting.com/Ws4hE-1585953162-161229-blog-hypatia-h_ce2ea48f49239c52d2cf8fefddfb96ca-h_28e739168e7e071f27c302cf27bf059b.jpg);
+  animation-delay: 20s; 
+}
+.slideshow li:nth-child(4) { 
+  background-image: url(https://www.scotsman.com/webimg/b25lY21zOjFlZjc2ZmZmLTAxZGYtNDUxNi04NDIzLWVhN2FiY2VhMDFhMjo1YjEyNDk2Yi1lNzYwLTRlYjktYmY3Yy1jODAzNjg1MzQ4YzU=.jpg);
+  animation-delay: 30s; 
+}
+.slideshow li:nth-child(5) { 
+  background-image: url(https://www.brooklynpaper.com/wp-content/uploads/2020/05/G9A5018-scaled.jpg);
+  animation-delay: 40s; 
+}
+
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+}
+
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+    opacity: 1;
+}

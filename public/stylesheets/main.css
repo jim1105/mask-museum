@@ -1,0 +1,12 @@
+.delete-form{
+	display:inline;
+}
+#submitted{
+	margin-right: 3rem;
+}
+#star{
+	float:right;
+}
+#star-word{
+	color:black;
+}
