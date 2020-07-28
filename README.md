@@ -1,5 +1,5 @@
 
-![alt text](https://github.com/jim1105/mask-museum/blob/master/Screen%20Shot%202020-07-28%20at%201.38.41%20PM.png "Mask Museum")
+![alt](https://github.com/jim1105/mask-museum/blob/master/Screen%20Shot%202020-07-28%20at%201.39.17%20PM.png)
 
 # Live Demo
 To see the app in action, go to [Mask Museum Demo](https://mask-museum.herokuapp.com/)
